@@ -4,7 +4,7 @@ import {compose} from 'recompose';
 import * as ROUTES from '../../constants/routes';
 import {withRouter} from 'react-router-dom';
 
-export const withAuthorization = (condition) => {
+const withAuthorization = (condition) => {
     const AuthComponent = (Component) => {
         const InternalComponent = (props) => {
             useEffect(() => {
@@ -24,3 +24,5 @@ export const withAuthorization = (condition) => {
         withFirebase
     )(AuthComponent);
 }
+
+export default withAuthorization;
